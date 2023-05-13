@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+header{
+    position: fixed;
+    background: #1e4155;
+    padding: 20px;
+    width: 100%;
+    height: 30px;
+}
+
+.left h3{
+    color: #fff;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.left span{
+    color: #51b3ec;
+}
+
+.sair_btn{
+    padding: 5px;
+    background: #51b3ec;
+    text-decoration: none;
+    float: right;
+    margin-top: -30px;
+    margin-right: 40px;
+    border-radius: 2px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    transition: 0.5s;
+    transition-property: #4a9fcf;
+}
+
+.sair_btn:hover{
+    background: #4a9fcf;
+}
+
+.siderbar{
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    margin-top: 70px;
+    padding-top: 30px;
+    left: 0;
+    background: #4b8564;
+    transition: 0.5s;
+    transition-property: left;
+}
+
+.siderbar .image{
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+}
+
+.siderbar h2{
+    color: rgb(34, 34, 34);
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.siderbar a{
+    color: #000;
+    display: block;
+    width: 100%;
+    line-height: 60px;
+    text-decoration: none;
+    padding-left: 40px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    transition-property: #fff;
+}
+
+.siderbar a:hover{
+    background: #fff;
+}
+
+.siderbar ion-icon{
+    padding-right: 10px;
+}
+
+label #siderbar_btn{
+    z-index: 1;
+    position: fixed;
+    left: 300px;
+    color: #fff;
+    font-size: 25px;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: 0.3s;
+    transition-property: #51b3ec;
+}
+
+label #siderbar_btn:hover{
+    color: #51b3ec;
+}
+
+#check:checked ~ .siderbar{
+    left: -190px;
+}
+
+#check:checked ~ .siderbar a span{
+    display: none;
+}
+
+#check:checked ~ .siderbar a{
+    font-size: 20px;
+    margin-left: 170px;
+    width: 80px;
+    
+}
+
+#check{
+    display: none;
+}
+
+.content{
+    background: url(img/galinha.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    transition: 0.5s;
+}
+
+#check:checked ~ .content{
+    margin-left: 60px;
+}
+
+#check{
+    display: none;
+}

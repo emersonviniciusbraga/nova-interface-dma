@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, max-scale=1.0">
+    <title>Monitoramento - DMA</title>
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/dycalendar.css">
+    <link rel="stylesheet" href="css/media.css">
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <!-- GRAFICOS -->
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+  
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ['Data/Horário', 'Amônia'],
+            ['2004',  1000],
+            ['2005',  1170],
+            ['2006',  660],
+            ['2007',  1030]
+          ]);
+  
+          var options = {
+            title: 'Amônia',
+            curveType: 'function',
+            legend: { position: 'bottom' }
+          };
+  
+          var chart = new google.visualization.LineChart(document.getElementById('grafico_amonia'));
+  
+          chart.draw(data, options);
+        }
+    </script>
+
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Data/Horário', 'Temperatura'],
+            ['2004',  1000],
+            ['2005',  1170],
+            ['2006',  660],
+            ['2007',  1030]
+          ]);
+
+        var options = {
+            title: 'Temperatura',
+            curveType: 'function',
+            legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('grafico_temperatura'));
+
+        chart.draw(data, options);
+        }
+    </script>
+
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Data/Horário', 'Umidade'],
+            ['2004',  1000],
+            ['2005',  1170],
+            ['2006',  660],
+            ['2007',  1030]
+          ]);
+
+        var options = {
+            title: 'Umidade',
+            curveType: 'function',
+            legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('grafico_umidade'));
+
+        chart.draw(data, options);
+        }
+    </script>
+    
+    <!-- MAPA -->
+    <script type="text/javascript">
+        google.charts.load("current", {
+        "packages":["map"],
+        // Note: you will need to get a mapsApiKey for your project.
+        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+        "mapsApiKey": "AIzaSyCJYPT0R62U7GTrN6bgw7_0fzTSYkghMLM"
+        });
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Lat', 'Long', 'Local'],
+            [-5.806574, -37.556766, 'Casa']
+        ]);
+
+        var map = new google.visualization.Map(document.getElementById('map_div'));
+        map.draw(data, {
+            showTooltip: true,
+            showInfoWindow: true
+        });
+        }
+
+    </script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="coluna-5">
+            <div class="siderbar">
+                <a href="#"><ion-icon name="person-circle-outline"></ion-icon></a>
+                <a href="dashboard.html"><ion-icon name="home-outline"></ion-icon></a>
+                <a href="monitoramento.html"><ion-icon name="desktop-outline"></ion-icon></a>
+                <a href="configuracao.html"><ion-icon name="settings-outline"></ion-icon></a>
+            </div>
+
+            <div class="siderbar-exit">
+                <a href="index.html"><ion-icon name="exit-outline"></ion-icon></a>
+            </div>
+        </div>
+        <div class="coluna-70">
+            <div class="top">
+                <div class="texto">
+                    <div class="title">
+                        <h1>Olá, Emerson!</h1>
+                        <h3>Lorem Ipsum is simply dummy.</h3>
+                    </div>
+                    <div class="itens">
+                        <div class="search">
+                            <!-- <button type="button" id="btnBusca"><ion-icon name="search-outline"></ion-icon></button> -->
+                            <input type="search" name="" id="txtBusca" placeholder=" Search anything here...">
+                        </div>
+                        <div class="notificação">
+                            <a href="#"><ion-icon name="notifications-outline"></ion-icon></a>
+                        </div>
+                    </div>      
+                </div>
+
+                <div class="card-mapa-row">
+                    <div class="card-mapa">
+                        <div id="map_div" style="width: 100%; height: 200px"></div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="monitoramento">
+                <div class="title">
+                    <h1>Monitoramento</h1>
+                    <a href="#">Todos os Dados</a>
+                </div>
+                <div class="card-tabela-row">
+                    <div class="card-tabela">
+                        <div class="tabela">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th>Amônia</th>
+                                        <th>Temperatura</th>
+                                        <th>Umidade</th>
+                                        <th>Data</th>
+                                        <th>Horário</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td scope="row">1</td>
+                                        <td>30</td>
+                                        <td>26</td>
+                                        <td>84</td>
+                                        <td>23/11/2022</td>
+                                        <td>20:19:28</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td scope="row">2</td>
+                                        <td>30</td>
+                                        <td>26</td>
+                                        <td>84</td>
+                                        <td>23/11/2022</td>
+                                        <td>20:19:28</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td scope="row">3</td>
+                                        <td>30</td>
+                                        <td>26</td>
+                                        <td>84</td>
+                                        <td>23/11/2022</td>
+                                        <td>20:19:28</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td scope="row">4</td>
+                                        <td>30</td>
+                                        <td>26</td>
+                                        <td>84</td>
+                                        <td>23/11/2022</td>
+                                        <td>20:19:28</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td scope="row">5</td>
+                                        <td>30</td>
+                                        <td>26</td>
+                                        <td>84</td>
+                                        <td>23/11/2022</td>
+                                        <td>20:19:28</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td scope="row">6</td>
+                                        <td>30</td>
+                                        <td>26</td>
+                                        <td>84</td>
+                                        <td>23/11/2022</td>
+                                        <td>20:19:28</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td scope="row">7</td>
+                                        <td>30</td>
+                                        <td>26</td>
+                                        <td>84</td>
+                                        <td>23/11/2022</td>
+                                        <td>20:19:28</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td scope="row">8</td>
+                                        <td>30</td>
+                                        <td>26</td>
+                                        <td>84</td>
+                                        <td>23/11/2022</td>
+                                        <td>20:19:28</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td scope="row">10</td>
+                                        <td>30</td>
+                                        <td>26</td>
+                                        <td>84</td>
+                                        <td>23/11/2022</td>
+                                        <td>20:19:28</td>
+                                    </tr>
+                                </tbody>
+                            </table>  
+                        </div>       
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="coluna-25">
+            <div class="graficos">
+                <h3>Gráficos</h3>
+                <div class="graficos-row">
+                    <div class="card-grafico">
+                        <div id="grafico_amonia"></div>
+                    </div>
+
+                    <div class="card-grafico">
+                        <div id="grafico_temperatura"></div>
+                    </div>
+
+                    <div class="card-grafico">
+                        <div id="grafico_umidade"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
+  
